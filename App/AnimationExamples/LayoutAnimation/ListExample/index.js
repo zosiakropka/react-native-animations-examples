@@ -1,23 +1,11 @@
 import React, { Component } from 'react'
-import { View, FlatList, LayoutAnimation } from 'react-native'
+import { View } from 'react-native'
 import randomColor from 'randomcolor'
 
 import ColorfulRectangle from './ColorfulRectangle'
 import AddItemButton from './AddItemButton'
+import AnimatedFlatList from './AnimatedFlatList'
 import WithPadding from '@app/Components/WithPadding'
-
-var LAYOUT_SPRING = {
-  duration: 500,
-  create: {
-    type: LayoutAnimation.Types.spring,
-    property: LayoutAnimation.Properties.opacity,
-    springDamping: 0.5
-  },
-  update: {
-    type: LayoutAnimation.Types.spring,
-    springDamping: 0.5
-  }
-}
 
 const randomItem = () => (
   {
@@ -34,25 +22,15 @@ export default class ListExample extends Component {
     }
   }
 
-  componentWillUpdate () {
-    LayoutAnimation.configureNext(LAYOUT_SPRING)
-  }
-
   render () {
     return (
       <View>
         <WithPadding>
           <AddItemButton
-            onPress={
-              () => {
-                this.setState({
-                  items: [randomItem(), ...this.state.items]
-                })
-              }
-            } />
+            onPress={() => this.addRandomItem()} />
         </WithPadding>
         <WithPadding>
-          <FlatList
+          <AnimatedFlatList
             data={this.state.items}
             renderItem={
               ({item}) => this.renderItem(item)
@@ -60,6 +38,12 @@ export default class ListExample extends Component {
         </WithPadding>
       </View>
     )
+  }
+
+  addRandomItem () {
+    this.setState({
+      items: [randomItem(), ...this.state.items]
+    })
   }
 
   removeItemByKey (key) {
