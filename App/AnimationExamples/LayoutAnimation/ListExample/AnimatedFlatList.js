@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { FlatList, LayoutAnimation } from 'react-native'
 
-var LAYOUT_SPRING = {
+const ANIMATION_CONFIG = {
   duration: 500,
   create: {
     type: LayoutAnimation.Types.spring,
@@ -12,11 +12,13 @@ var LAYOUT_SPRING = {
     type: LayoutAnimation.Types.spring,
     springDamping: 0.5
   }
+  // delete had its glitches
 }
 
 export default class AnimatedList extends Component {
   componentWillReceiveProps () {
-    LayoutAnimation.configureNext(LAYOUT_SPRING)
+    // Schedules an animation to happen on the next layout.
+    LayoutAnimation.configureNext(ANIMATION_CONFIG)
   }
 
   render () {
