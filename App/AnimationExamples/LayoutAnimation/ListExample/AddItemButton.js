@@ -1,18 +1,8 @@
 import React from 'react'
-import { View, TouchableHighlight, Text } from 'react-native'
-
-import style from './AddItemButtonStyle'
+import StyledButton from '@app/Components/StyledButton'
 
 const AddItemButton = ({onPress}) => (
-  <View style={style.container}>
-    <TouchableHighlight
-      style={style.button}
-      onPress={() => onPress()}>
-      <Text style={style.label}>
-        Add item
-      </Text>
-    </TouchableHighlight>
-  </View>
+  <StyledButton onPress={onPress} title={'Add item'} />
 )
 
 export default AddItemButton
