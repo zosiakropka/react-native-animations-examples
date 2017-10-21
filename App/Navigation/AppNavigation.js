@@ -1,18 +1,20 @@
-import { StackNavigator } from 'react-navigation'
-import LaunchScreen from '../Containers/LaunchScreen'
+import { TabNavigator } from 'react-navigation'
+import Animated from '@app/AnimationExamples/Animated/index'
+import LayoutAnimation from '@app/AnimationExamples/LayoutAnimation/index'
 
-import styles from './Styles/NavigationStyles'
-
-// Manifest of possible screens
-const PrimaryNav = StackNavigator({
-  LaunchScreen: { screen: LaunchScreen }
-}, {
-  // Default config for all screens
-  headerMode: 'none',
-  initialRouteName: 'LaunchScreen',
-  navigationOptions: {
-    headerStyle: styles.header
+const AppNavigation = TabNavigator({
+  Animated: {
+    screen: Animated,
+    navigationOptions: {
+      tabBarLabel: 'Animated'
+    }
+  },
+  LayoutAnimation: {
+    screen: LayoutAnimation,
+    navigationOptions: {
+      tabBarLabel: 'LayoutAnimation'
+    }
   }
 })
 
-export default PrimaryNav
+export default AppNavigation
