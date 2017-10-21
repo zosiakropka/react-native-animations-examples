@@ -1,11 +1,11 @@
 import React from 'react'
-import { View, Text } from 'react-native'
 
 import ContainerWithStatusBar from '@app/Components/ContainerWithStatusBar'
+import ListExample from './ListExample'
 
 const SecondScreen = () => (
   <ContainerWithStatusBar>
-    <Text>This is the second screen</Text>
+    <ListExample />
   </ContainerWithStatusBar>
 )
 
