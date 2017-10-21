@@ -3,11 +3,11 @@ import { View, StatusBar } from 'react-native'
 
 import style from './style'
 
-const ContainerWithStatusBar = ({barStyle='dark-content', children}) => (
+const ContainerWithStatusBar = ({barStyle = 'dark-content', children}) => (
   <View>
     <StatusBar barStyle={barStyle} />
     <View style={style}>
-    {children}
+      {children}
     </View>
   </View>
 )
