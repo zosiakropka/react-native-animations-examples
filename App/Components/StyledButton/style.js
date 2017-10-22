@@ -1,16 +1,17 @@
 const STYLE = {
   container: {
-    height: 100
+    height: 80
   },
   button: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#54668d',
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center'
   },
   label: {
-    color: 'white'
+    color: '#eeeeee',
+    fontSize: 20
   }
 }
 
