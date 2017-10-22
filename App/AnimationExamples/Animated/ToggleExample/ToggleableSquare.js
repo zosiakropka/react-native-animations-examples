@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Animated } from 'react-native'
 
-import style from './ToggleableRectangleStyle'
+import style from '../../Shared/style'
 
-class ToggleableRectangle extends Component {
+class ToggleableSquare extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -21,7 +21,7 @@ class ToggleableRectangle extends Component {
 
   render () {
     return <Animated.View
-      style={[style.rectangle, {
+      style={[style.bigRedSquare, {
         transform: [
           {scale: this.state.scale}
         ]
@@ -37,4 +37,4 @@ class ToggleableRectangle extends Component {
   }
 }
 
-export default ToggleableRectangle
+export default ToggleableSquare

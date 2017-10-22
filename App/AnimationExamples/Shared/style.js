@@ -1,5 +1,5 @@
 const STYLE = {
-  rectangle: {
+  bigRedSquare: {
     width: 300,
     height: 300,
     backgroundColor: 'red'

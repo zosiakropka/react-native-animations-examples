@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, LayoutAnimation } from 'react-native'
 
-import style from './ToggleableRectangleStyle'
+import style from '../../Shared/style'
 
 const ANIMATION_CONFIG = {
   duration: 1000,
@@ -20,14 +20,14 @@ const ANIMATION_CONFIG = {
   }
 }
 
-class ToggleableRectangle extends Component {
+class ToggleableSquare extends Component {
   componentWillMount () {
     // Schedules an animation to happen on the next layout.
     LayoutAnimation.configureNext(ANIMATION_CONFIG)
   }
 
   render () {
-    return <View style={style.rectangle} />
+    return <View style={style.bigRedSquare} />
   }
 
   componentWillUnmount () {
@@ -35,4 +35,4 @@ class ToggleableRectangle extends Component {
   }
 }
 
-export default ToggleableRectangle
+export default ToggleableSquare
