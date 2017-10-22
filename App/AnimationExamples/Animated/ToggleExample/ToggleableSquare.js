@@ -12,11 +12,15 @@ class ToggleableSquare extends Component {
   }
 
   componentDidMount () {
-    Animated.timing(
+    Animated.spring(
       this.state.scale,
-      { toValue: 1,
-        duration: 1000 }
+      { toValue: 1 }
     ).start()
+    // Animated.timing(
+    //   this.state.scale,
+    //   { toValue: 1,
+    //     duration: 1000 }
+    // ).start()
   }
 
   render () {

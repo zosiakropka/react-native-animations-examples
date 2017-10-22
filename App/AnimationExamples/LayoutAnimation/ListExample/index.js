@@ -3,9 +3,9 @@ import { View } from 'react-native'
 import randomColor from 'randomcolor'
 
 import ColorfulRectangle from './ColorfulRectangle'
-import AddItemButton from './AddItemButton'
 import AnimatedFlatList from './AnimatedFlatList'
 import WithPadding from '@app/Components/WithPadding'
+import StyledButton from '@app/Components/StyledButton'
 
 const randomItem = () => (
   {
@@ -26,7 +26,8 @@ export default class ListExample extends Component {
     return (
       <View>
         <WithPadding>
-          <AddItemButton
+          <StyledButton
+            title='Add item to list with LayoutAnimation'
             onPress={() => this.addRandomItem()} />
         </WithPadding>
         <WithPadding>

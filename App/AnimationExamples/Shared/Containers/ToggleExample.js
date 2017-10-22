@@ -17,7 +17,7 @@ export default class ToggleExample extends Component {
       <View>
         <WithPadding>
           <StyledButton
-            title={'Toggle visibility'}
+            title={this.props.toggleVisibilityText}
             onPress={() => this.setState({
               rectangleIsVisible: !this.state.rectangleIsVisible
             })} />
