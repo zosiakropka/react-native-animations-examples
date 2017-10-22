@@ -21,15 +21,17 @@ const ANIMATION_CONFIG = {
 }
 
 class ToggleableRectangle extends Component {
-  componentWillReceiveProps () {
+  componentWillMount () {
     // Schedules an animation to happen on the next layout.
     LayoutAnimation.configureNext(ANIMATION_CONFIG)
   }
 
   render () {
-    return this.props.isVisible
-      ? <View style={style.rectangle} />
-      : null
+    return <View style={style.rectangle} />
+  }
+
+  componentWillUnmount () {
+    LayoutAnimation.configureNext(ANIMATION_CONFIG)
   }
 }
 

@@ -1,14 +1,15 @@
-import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import React from 'react'
+import { ScrollView } from 'react-native'
 
 import ContainerWithStatusBar from '@app/Components/ContainerWithStatusBar'
+import ToggleExample from './ToggleExample'
 
-export default class LaunchScreen extends Component {
-  render () {
-    return (
-      <ContainerWithStatusBar>
-        <View><Text>wtf</Text></View>
-      </ContainerWithStatusBar>
-    )
-  }
-}
+const SecondScreen = () => (
+  <ContainerWithStatusBar>
+    <ScrollView>
+      <ToggleExample />
+    </ScrollView>
+  </ContainerWithStatusBar>
+)
+
+export default SecondScreen

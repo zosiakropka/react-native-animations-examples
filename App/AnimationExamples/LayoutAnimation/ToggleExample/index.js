@@ -24,8 +24,7 @@ export default class ToggleExample extends Component {
             })} />
         </WithPadding>
         <WithPadding>
-          <ToggleableRectangle
-            isVisible={this.state.rectangleIsVisible} />
+          { this.state.rectangleIsVisible && <ToggleableRectangle /> }
         </WithPadding>
         <WithPadding>
           <Text>a footer to show it bounced out</Text>

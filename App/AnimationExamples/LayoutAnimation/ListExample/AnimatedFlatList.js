@@ -6,11 +6,11 @@ const ANIMATION_CONFIG = {
   create: {
     type: LayoutAnimation.Types.spring,
     property: LayoutAnimation.Properties.opacity,
-    springDamping: 0.5
+    springDamping: 0.4
   },
   update: {
     type: LayoutAnimation.Types.spring,
-    springDamping: 0.5
+    springDamping: 0.4
   }
   // delete had its glitches
 }
