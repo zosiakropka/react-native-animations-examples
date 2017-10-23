@@ -21,7 +21,7 @@ export default class BackAndForth extends Component {
             title={this.props.toggleDirectionText} />
         </WithPadding>
         <WithPadding>
-          <this.props.horizontalTraveller toTheRight={this.state.toTheRight} />
+          <this.props.HorizontalTraveller toTheRight={this.state.toTheRight} />
         </WithPadding>
       </View>
     )

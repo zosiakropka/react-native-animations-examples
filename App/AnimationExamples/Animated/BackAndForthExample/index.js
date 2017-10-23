@@ -5,7 +5,7 @@ import BackAndForth from '../../Shared/Containers/BackAndForth'
 
 const Example = () => (
   <BackAndForth
-    toggleDirectionText='Toggle direction with ReactMotion.Motion'
+    toggleDirectionText='Toggle direction with Animated'
     HorizontalTraveller={HorizontalTraveller} />
 )
 

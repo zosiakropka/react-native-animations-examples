@@ -1,3 +1,10 @@
+const TINY_RED_CIRCLE_STYLE = {
+  width: 30,
+  height: 30,
+  borderRadius: 15,
+  backgroundColor: 'red'
+}
+
 const STYLE = {
   bigRedSquare: {
     width: 300,
@@ -11,11 +18,10 @@ const STYLE = {
   barRectangle: {
     flex: 0.2
   },
-  tinyRedCircle: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-    backgroundColor: 'red'
+  tinyRedCircle: TINY_RED_CIRCLE_STYLE,
+  backAndForthContainer: {
+    height: TINY_RED_CIRCLE_STYLE.height,
+    backgroundColor: 'lightgray'
   }
 }
 

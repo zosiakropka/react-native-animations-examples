@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
-import { View } from 'react-native'
-import { spring, Motion } from 'react-motion'
+import { View, Animated } from 'react-native'
 
 import style from '../../Shared/style'
 
 export default class HorizontalTraveller extends Component {
   constructor (props) {
     super(props)
+
     this.state = {
-      interpolatingStyle: {
-        left: spring(0)
-      }
+      leftValue: new Animated.Value(0)
     }
   }
 
@@ -27,11 +25,9 @@ export default class HorizontalTraveller extends Component {
       ? this.state.width
       : 0
 
-    this.setState({
-      interpolatingStyle: {
-        left: spring(targetLeft)
-      }
-    })
+    Animated.spring(this.state.leftValue, {
+      toValue: targetLeft
+    }).start()
   }
 
   render () {
@@ -39,22 +35,15 @@ export default class HorizontalTraveller extends Component {
       <View
         onLayout={({nativeEvent}) => this.setState({width: nativeEvent.layout.width})}
         style={style.backAndForthContainer}>
-        <Motion
-          defaultStyle={{left: 0}}
-          style={this.state.interpolatingStyle}>
-          {
-            (interpolatingStyle) => (
-              <View style={[
-                style.tinyRedCircle,
-                {
-                  position: 'absolute',
-                  top: 0
-                },
-                interpolatingStyle
-              ]} />
-            )
-          }
-        </Motion>
+        <Animated.View
+          style={[
+            style.tinyRedCircle,
+            {
+              position: 'absolute',
+              top: 0,
+              left: this.state.leftValue
+            }
+          ]} />
       </View>
     )
   }
