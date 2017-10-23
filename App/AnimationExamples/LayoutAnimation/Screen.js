@@ -9,7 +9,7 @@ if (Platform.OS === 'android') {
   UIManager.setLayoutAnimationEnabledExperimental(true)
 }
 
-const SecondScreen = () => (
+const LayoutAnimationScreen = () => (
   <ContainerWithStatusBar>
     <ScrollView>
       <ToggleExample />
@@ -18,4 +18,4 @@ const SecondScreen = () => (
   </ContainerWithStatusBar>
 )
 
-export default SecondScreen
+export default LayoutAnimationScreen
