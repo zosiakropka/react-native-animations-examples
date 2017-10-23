@@ -10,6 +10,12 @@ const STYLE = {
   },
   barRectangle: {
     flex: 0.2
+  },
+  tinyRedCircle: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: 'red'
   }
 }
 
